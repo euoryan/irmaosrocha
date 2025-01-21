@@ -9,305 +9,231 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-    --primary-color: #f97316;
-    --primary-hover: #ea580c;
-    --transition-standard: all 0.3s ease;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Base Styles & Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-    overflow-x: hidden;
-    line-height: 1.5;
-    background-color: #ffffff;
-}
-
-/* Navigation */
-nav {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
-    transition: var(--transition-standard);
-}
-
-.nav-link {
-    position: relative;
-    padding: 0.5rem 0;
-    transition: var(--transition-standard);
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--primary-color);
-    transition: var(--transition-standard);
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Hero Section */
-#inicio {
-    position: relative;
-    background: linear-gradient(to bottom right, #ffffff, #f8fafc);
-}
-
-.hero-button {
-    transition: var(--transition-standard);
-}
-
-/* Services Section */
-.service-card {
-    border-top: 4px solid var(--primary-color);
-    transition: var(--transition-standard);
-    background: #ffffff;
-    height: 100%;
-}
-
-.service-image-container {
-    height: 240px;
-    overflow: hidden;
-}
-
-.service-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.service-content {
-    padding: 1.5rem;
-}
-
-.service-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #1f2937;
-    color: white;
-    border-radius: 0.5rem;
-    transition: var(--transition-standard);
-}
-
-.service-button:hover {
-    background-color: #374151;
-}
-
-/* Advantages Section */
-.vantagem-card {
-    border-bottom: 4px solid var(--primary-color);
-    transition: var(--transition-standard);
-    background: #ffffff;
-}
-
-.vantagem-icon {
-    color: var(--primary-color);
-}
-
-/* Contact Section */
-.contact-card {
-    transition: var(--transition-standard);
-    background: #ffffff;
-}
-
-.contact-link {
-    transition: var(--transition-standard);
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary-color);
-}
-
-.contact-link:hover {
-    color: var(--primary-hover);
-}
-
-.contact-whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background-color: #1f2937;
-    color: white;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    transition: var(--transition-standard);
-}
-
-.contact-whatsapp-button:hover {
-    background-color: #374151;
-}
-
-.contact-whatsapp-button i {
-    font-size: 1.5rem;
-    margin-right: 0.75rem;
-}
-
-/* Footer */
-footer {
-    position: relative;
-    background-color: #1f2937;
-}
-
-.footer-link {
-    transition: var(--transition-standard);
-    display: inline-flex;
-    align-items: center;
-    color: #9ca3af;
-}
-
-.footer-link:hover {
-    color: #ffffff;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-
-    nav .max-w-6xl {
-        padding: 0 1.25rem;
-    }
-    
-    .nav-link {
-        font-size: 1.125rem;
-        padding: 0.75rem 0;
-    }
-
-    #inicio {
-        padding: 5rem 1.25rem 3rem;
-    }
-
-    #inicio h2 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-
-    .hero-button {
-        width: 100%;
-    }
-    
-    #inicio .flex-col {
-        text-align: center;
-    }
-    
-    #inicio .flex-col > div {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .service-card {
-        margin: 0 1.25rem 1.5rem;
-    }
-    
-    .service-image-container {
-        height: 200px;
-    }
-
-    .vantagem-card {
-        margin: 0 1.25rem 1.5rem;
-    }
-
-    .contact-card {
-        margin: 0 1.25rem 1.5rem;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .contact-info .ml-4 {
-        margin-left: 2.25rem;
-        margin-top: 0.25rem;
-    }
-    
-    .contact-whatsapp-button {
-        margin-top: 1.5rem;
-    }
-
-    footer {
-        padding: 3rem 1.25rem 2rem;
-    }
-    
-    footer .grid.md\:grid-cols-3 {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    footer .text-2xl {
-        font-size: 1.75rem;
-    }
-    
-    footer .space-y-3 {
-        margin-top: 1rem;
-    }
-    
-    footer .mt-12 {
-        margin-top: 2.5rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-    
-    section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        padding: 0 1.25rem;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    html {
-        font-size: 15px;
-    }
-    
-    #inicio {
-        padding: 6rem 2rem 4rem;
-    }
-
-    section {
-        padding: 4rem 2rem;
-    }
-}
-
-/* Utility Classes */
-.text-balance {
-    text-wrap: balance;
-}
-
-.smooth-shadow {
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-standard);
-}
-
-.smooth-shadow:hover {
-    box-shadow: var(--shadow-lg);
-}
-    </style>
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --transition-standard: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Reset e Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            overflow-x: hidden;
+            line-height: 1.5;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        /* Navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-sm);
+            height: 4rem;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition-standard);
+            color: #374151;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: var(--transition-standard);
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Seção de Serviços */
+        .service-card {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            height: 100%;
+            border: 1px solid #e5e7eb;
+            transition: var(--transition-standard);
+        }
+        
+        .service-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-image-container {
+            height: 240px;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #1f2937;
+            color: white;
+            border-radius: 0.5rem;
+            transition: var(--transition-standard);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .service-button:hover {
+            background-color: #374151;
+        }
+        
+        /* Seção de Vantagens */
+        .vantagem-card {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .vantagem-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .vantagem-icon {
+            color: var(--primary-color);
+        }
+        
+        /* Seção de Contato */
+        .contact-card {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .contact-link {
+            transition: var(--transition-standard);
+            color: #4b5563;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #ffffff;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-link {
+            color: #9ca3af;
+            transition: var(--transition-standard);
+        }
+        
+        .footer-link:hover {
+            color: #ffffff;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 640px) {
+            html {
+                font-size: 14px;
+            }
+        
+            #inicio {
+                padding-top: 4rem;
+                min-height: calc(100vh - 4rem);
+            }
+        
+            .hero-button {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        
+            section {
+                padding: 3rem 1rem;
+            }
+        
+            .service-card,
+            .vantagem-card,
+            .contact-card {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            #inicio {
+                padding-top: 4rem;
+                min-height: calc(100vh - 4rem);
+            }
+        
+            section {
+                padding: 4rem 2rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section {
+                padding: 5rem 3rem;
+            }
+        }
+        
+        /* Utilitários */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .max-w-6xl {
+            max-width: 72rem;
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+        </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navegação -->
@@ -328,38 +254,33 @@ footer {
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-24 pb-12 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between py-16">
-                <div class="text-left md:w-1/2 mb-8 md:mb-0">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Manutenção Profissional 
-                        <span class="block mt-2">para seu 
-                            <span class="text-orange-500">Imóvel</span>
-                        </span>
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-8">Soluções completas em manutenção predial e residencial com qualidade e segurança.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-300">
-                            <i class="fab fa-whatsapp mr-2 text-xl"></i>
-                            Solicitar Orçamento
-                        </a>
-                        <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-gray-900 border-2 border-gray-900 hover:bg-gray-100 transition-colors duration-300">
-                            Nossos Serviços
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-orange-500/10 rounded-xl transform rotate-6"></div>
-                        
-                    </div>
+    <section id="inicio" class="min-h-screen flex items-center bg-white">
+        <div class="max-w-6xl mx-auto px-4 w-full py-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Manutenção Profissional 
+                    <span class="block mt-2">para seu 
+                        <span class="text-orange-500">Imóvel</span>
+                    </span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Soluções completas em manutenção predial e residencial com qualidade e segurança.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5548991934033" 
+                       class="hero-button w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-300">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                        Solicitar Orçamento
+                    </a>
+                    <a href="#servicos" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-4 rounded-lg font-semibold text-gray-900 border-2 border-gray-900 hover:bg-gray-100 transition-colors duration-300">
+                        Nossos Serviços
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     
-
     <!-- Serviços -->
     <section id="servicos" class="py-16">
         <div class="max-w-6xl mx-auto px-4">
