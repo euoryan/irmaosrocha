@@ -22,6 +22,13 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
         }
 
         /* Header e Navegação */
@@ -44,17 +51,58 @@
             width: 100%;
         }
 
-        /* Hero Section - Removido o transform do hover */
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav .max-w-6xl {
+                padding: 0 1rem;
+            }
+            
+            .hidden.md\:flex {
+                display: none;
+            }
+            
+            /* Add a mobile menu button */
+            .mobile-menu-btn {
+                display: block;
+                padding: 0.5rem;
+            }
+        }
+
+        /* Hero Section */
         .hero-button {
             background-color: var(--primary-color);
             transition: background-color 0.3s ease;
+            width: fit-content;
         }
 
         .hero-button:hover {
             background-color: var(--primary-hover);
         }
 
-        /* Serviços - Ajustado para tamanho padrão */
+        @media (max-width: 768px) {
+            #inicio {
+                padding-top: 5rem;
+                padding-bottom: 3rem;
+            }
+            
+            #inicio h2 {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+            }
+            
+            #inicio p {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+            
+            .hero-button {
+                width: calc(100% - 2rem);
+                margin: 0 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* Serviços */
         .service-card {
             border-top: 4px solid var(--primary-color);
             height: 100%;
@@ -110,6 +158,20 @@
             background-color: var(--primary-hover);
         }
 
+        @media (max-width: 768px) {
+            .grid.md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                margin: 0 1rem 1.5rem;
+            }
+            
+            .service-image-container {
+                height: 180px;
+            }
+        }
+
         /* Vantagens */
         .vantagem-card {
             border-bottom: 4px solid var(--primary-color);
@@ -125,6 +187,12 @@
             color: var(--primary-color);
         }
 
+        @media (max-width: 768px) {
+            .vantagem-card {
+                margin: 0 1rem 1.5rem;
+            }
+        }
+
         /* Contato */
         .contact-card {
             transition: transform 0.3s ease;
@@ -136,10 +204,25 @@
 
         .contact-link {
             transition: color 0.3s ease;
+            word-break: break-word;
         }
 
         .contact-link:hover {
             color: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                margin: 0 1rem 1.5rem;
+            }
+            
+            .contact-card .flex.items-center {
+                flex-wrap: wrap;
+            }
+            
+            .contact-card a.contact-link {
+                font-size: 0.9rem;
+            }
         }
 
         /* Footer */
@@ -149,6 +232,53 @@
 
         .footer-link:hover {
             color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            footer .grid.md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
+            }
+            
+            footer div {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Section Headers */
+        @media (max-width: 768px) {
+            section h2 {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+        }
+
+        /* Spacing Adjustments */
+        @media (max-width: 768px) {
+            .py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .mb-12 {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* General Mobile Optimizations */
+        @media (max-width: 768px) {
+            .max-w-6xl {
+                width: 100%;
+            }
+            
+            .px-4 {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     </style>
 </head>
@@ -195,7 +325,7 @@
                 <!-- Serviço 2 - Elétrica -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/backupfiles.webp" 
+                        <img src="assets/images/projetos/eletrica.webp" 
                              alt="Elétrica" 
                              class="service-image">
                     </div>
@@ -211,7 +341,7 @@
                 <!-- Serviço 3 - Hidráulica -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/backupfiles.webp" 
+                        <img src="assets/images/projetos/hidraulica.webp" 
                              alt="Hidráulica" 
                              class="service-image">
                     </div>
@@ -227,7 +357,7 @@
                 <!-- Serviço 4 - Pintura -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/backupfiles.webp" 
+                        <img src="assets/images/projetos/pintura.webp" 
                              alt="Pintura" 
                              class="service-image">
                     </div>
@@ -243,7 +373,7 @@
                 <!-- Serviço 5 - Solda -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/backupfiles.webp" 
+                        <img src="assets/images/projetos/solda.webp" 
                              alt="Solda" 
                              class="service-image">
                     </div>
@@ -259,7 +389,7 @@
                 <!-- Serviço 6 - Serviços de Pedreiro -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/backupfiles.webp" 
+                        <img src="assets/images/projetos/pedreiro.webp" 
                              alt="Pedreiro" 
                              class="service-image">
                     </div>
