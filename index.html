@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irmãos Rocha</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon/euoryan.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+        }
+
+        /* Resets e Bases */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header e Navegação */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Removido o transform do hover */
+        .hero-button {
+            background-color: var(--primary-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Serviços - Ajustado para tamanho padrão */
+        .service-card {
+            border-top: 4px solid var(--primary-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-image-container:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .service-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Vantagens */
+        .vantagem-card {
+            border-bottom: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .vantagem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .vantagem-icon {
+            color: var(--primary-color);
+        }
+
+        /* Contato */
+        .contact-card {
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-link {
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-hover);
+        }
+
+        /* Footer */
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navegação -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-800">Irmãos <span class="text-orange-500">Rocha</span></h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link text-gray-700">Início</a>
+                    <a href="#servicos" class="nav-link text-gray-700">Serviços</a>
+                    <a href="#vantagens" class="nav-link text-gray-700">Vantagens</a>
+                    <a href="#contato" class="nav-link text-gray-700">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center py-16">
+                <h2 class="text-5xl font-bold text-white mb-6">Serviços Gerais de <span class="text-orange-500">Qualidade</span></h2>
+                <p class="text-xl text-gray-300 mb-10">Soluções completas em manutenção predial e residencial</p>
+                <div class="inline-block">
+                    <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center px-10 py-4 rounded-lg font-semibold text-white">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                        Solicitar Orçamento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nossos Serviços</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Serviço 1 - Manutenção Predial -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Manutenção Predial" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Manutenção Predial</h3>
+                        <p class="text-gray-600">Serviços completos de manutenção para seu imóvel, garantindo segurança e durabilidade.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 - Elétrica -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Elétrica" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Elétrica</h3>
+                        <p class="text-gray-600">Instalações e manutenções elétricas com segurança e qualidade garantida.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 - Hidráulica -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Hidráulica" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Hidráulica</h3>
+                        <p class="text-gray-600">Soluções completas em instalações e reparos hidráulicos para sua casa ou empresa.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 - Pintura -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Pintura" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Pintura</h3>
+                        <p class="text-gray-600">Serviços de pintura profissional para renovar e proteger seu ambiente.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 5 - Solda -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Solda" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Solda</h3>
+                        <p class="text-gray-600">Serviços de solda com qualidade e precisão para diferentes necessidades.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 6 - Serviços de Pedreiro -->
+                <div class="service-card">
+                    <div class="service-image-container">
+                        <img src="assets/images/projetos/backupfiles.webp" 
+                             alt="Pedreiro" 
+                             class="service-image">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Serviços de Pedreiro</h3>
+                        <p class="text-gray-600">Execução de obras e reformas com qualidade e compromisso.</p>
+                        <a href="https://wa.me/5548991934033" class="service-button">
+                            Contratar Serviço
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section id="vantagens" class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nossas Vantagens</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Vantagem 1 -->
+                <div class="vantagem-card bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="vantagem-icon text-5xl mb-6">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Atendimento Rápido</h3>
+                    <p class="text-gray-600">Resposta ágil e eficiente para todas as suas necessidades de manutenção.</p>
+                </div>
+
+                <!-- Vantagem 2 -->
+                <div class="vantagem-card bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="vantagem-icon text-5xl mb-6">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Garantia de Serviço</h3>
+                    <p class="text-gray-600">Todos os nossos serviços possuem garantia e são executados por profissionais qualificados.</p>
+                </div>
+
+                <!-- Vantagem 3 -->
+                <div class="vantagem-card bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="vantagem-icon text-5xl mb-6">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Preço Justo</h3>
+                    <p class="text-gray-600">Orçamentos transparentes e preços competitivos para todos os serviços.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Entre em Contato</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="contact-card bg-gray-50 p-8 rounded-lg shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-800">Fábio</p>
+                                <a href="tel:+5548991934033" class="contact-link text-orange-500">(48) 99193-4033</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-800">Alex</p>
+                                <a href="tel:+5548991664602" class="contact-link text-orange-500">(48) 99166-4602</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-orange-500 text-2xl w-8"></i>
+                            <a href="mailto:irmaosrochamanutencao@gmail.com" class="contact-link ml-4 text-orange-500">irmaosrochamanutencao@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-instagram text-orange-500 text-2xl w-8"></i>
+                            <a href="https://instagram.com/irmaosrocha" class="contact-link ml-4 text-orange-500">@irmaosrocha</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-card bg-gray-50 p-8 rounded-lg shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-semibold mb-8 text-gray-800">Horário de Atendimento</h3>
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-orange-500 text-2xl w-8"></i>
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-800">Segunda a Sexta</p>
+                                <p class="text-gray-600">8h às 18h</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-orange-500 text-2xl w-8"></i>
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-800">Sábado</p>
+                                <p class="text-gray-600">8h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center justify-center bg-green-500 text-white px-6 py-4 rounded-lg font-semibold w-full text-lg hover:bg-green-600">
+                        <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-100 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-6 text-white">Irmãos <span class="text-orange-500">Rocha</span></h4>
+                    <p class="text-gray-400 text-lg">Serviços gerais de qualidade para sua casa ou empresa.</p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold mb-6 text-white">Serviços</h4>
+                    <ul class="text-gray-400 space-y-3">
+                        <li><a href="#servicos" class="footer-link">Manutenção Predial</a></li>
+                        <li><a href="#servicos" class="footer-link">Elétrica</a></li>
+                        <li><a href="#servicos" class="footer-link">Hidráulica</a></li>
+                        <li><a href="#servicos" class="footer-link">Pintura</a></li>
+                        <li><a href="#servicos" class="footer-link">Solda</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold mb-6 text-white">Contato</h4>
+                    <ul class="text-gray-400 space-y-3">
+                        <li>
+                            <a href="tel:+5548991934033" class="flex items-center footer-link">
+                                <i class="fas fa-phone text-orange-500 mr-3"></i>
+                                Fábio: (48) 99193-4033
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+5548991664602" class="flex items-center footer-link">
+                                <i class="fas fa-phone text-orange-500 mr-3"></i>
+                                Alex: (48) 99166-4602
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:irmaosrochamanutencao@gmail.com" class="flex items-center footer-link">
+                                <i class="fas fa-envelope text-orange-500 mr-3"></i>
+                                irmaosrochamanutencao@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/irmaosrocha" class="flex items-center footer-link">
+                                <i class="fab fa-instagram text-orange-500 mr-3"></i>
+                                @irmaosrocha
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2025 Irmãos Rocha. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
