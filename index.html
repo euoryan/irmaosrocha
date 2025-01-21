@@ -309,6 +309,17 @@
         .text-balance {
             text-wrap: balance;
         }
+
+        /* Adicione isso ao bloco style existente */
+        .footer-credit {
+            color: #9ca3af; /* cor base mais clara */
+            font-weight: bold; /* ou 700 se preferir usar número */
+            transition: color 0.3s ease;
+        }
+
+        .footer-credit:hover {
+            color: #ffffff; /* cor laranja do Tailwind (orange-500) */
+        }
     </style>
 </head>
 
@@ -504,8 +515,8 @@
                         </div>
                         <div class="flex items-center">
                             <i class="fab fa-instagram text-orange-500 text-2xl w-8"></i>
-                            <a href="https://instagram.com/irmaosrocha"
-                                class="contact-link ml-4 text-orange-500">@irmaosrocha</a>
+                            <a href="https://instagram.com/irmaosrochamanutencoes"
+                                class="contact-link ml-4 text-orange-500">@irmaosrochamanutencoes</a>
                         </div>
                     </div>
                 </div>
@@ -538,59 +549,83 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-100 py-16">
+    <footer class="bg-gray-900 text-gray-100 py-8">
+        <!-- Reduzido py-16 para py-8 -->
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Reduzido gap-12 para gap-8 -->
                 <div>
-                    <h4 class="text-2xl font-semibold mb-6 text-white">Irmãos <span class="text-orange-500">Rocha</span>
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        <!-- Reduzido text-2xl para text-xl e mb-6 para mb-4 -->
+                        Irmãos <span class="text-orange-500">Rocha</span>
                     </h4>
-                    <p class="text-gray-400 text-lg">Serviços gerais de qualidade para sua casa ou empresa.</p>
+                    <p class="text-gray-400 text-base">
+                        <!-- Reduzido text-lg para text-base -->
+                        Soluções, Reparos e Manutenções.
+                    </p>
                 </div>
                 <div>
-                    <h4 class="text-2xl font-semibold mb-6 text-white">Serviços</h4>
-                    <ul class="text-gray-400 space-y-3">
-                        <li><a href="#servicos" class="footer-link">Manutenção Predial</a></li>
-                        <li><a href="#servicos" class="footer-link">Elétrica</a></li>
-                        <li><a href="#servicos" class="footer-link">Hidráulica</a></li>
-                        <li><a href="#servicos" class="footer-link">Pintura</a></li>
-                        <li><a href="#servicos" class="footer-link">Solda</a></li>
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        <!-- Reduzido text-2xl para text-xl e mb-6 para mb-4 -->
+                        Nossos Serviços
+                    </h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <!-- Reduzido space-y-3 para space-y-2 -->
+                        <li><a href="#servicos" class="footer-link text-sm">Elétrica</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Hidráulica</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Pintura</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Solda</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Serviços de Pedreiro</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-2xl font-semibold mb-6 text-white">Contato</h4>
-                    <ul class="text-gray-400 space-y-3">
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        <!-- Reduzido text-2xl para text-xl e mb-6 para mb-4 -->
+                        Informações
+                    </h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <!-- Reduzido space-y-3 para space-y-2 -->
                         <li>
-                            <a href="tel:+5548991934033" class="flex items-center footer-link">
-                                <i class="fas fa-phone text-orange-500 mr-3"></i>
+                            <a href="tel:+5548991934033" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-phone text-orange-500 mr-2"></i>
+                                <!-- Reduzido mr-3 para mr-2 -->
                                 Fábio: +55 (48) 99193-4033
                             </a>
                         </li>
                         <li>
-                            <a href="tel:+5548991664602" class="flex items-center footer-link">
-                                <i class="fas fa-phone text-orange-500 mr-3"></i>
+                            <a href="tel:+5548991664602" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-phone text-orange-500 mr-2"></i>
                                 Alex: +55 (48) 99166-4602
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:irmaosrochamanutencao@gmail.com" class="flex items-center footer-link">
-                                <i class="fas fa-envelope text-orange-500 mr-3"></i>
-                                irmaosrochamanutencao@gmail.com
+                            <a href="mailto:contato@euoryan.com" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-envelope text-orange-500 mr-2"></i>
+                                contato@euoryan.com
                             </a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/irmaosrocha" class="flex items-center footer-link">
-                                <i class="fab fa-instagram text-orange-500 mr-3"></i>
-                                @irmaosrocha
+                            <a href="https://instagram.com/irmaosrochamanutencoes" class="flex items-center footer-link text-sm">
+                                <i class="fab fa-instagram text-orange-500 mr-2"></i>
+                                @irmaosrochamanutencoes
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
-                <p>&copy; 2025 Irmãos Rocha. Todos os direitos reservados.</p>
+    
+            <div class="mt-8 pt-4 border-t border-gray-800 text-center">
+                <!-- Reduzido mt-12 para mt-8 e pt-8 para pt-4 -->
+                <p class="text-gray-500 text-sm">
+                    <!-- Adicionado text-sm -->
+                    &copy; 2024 por 
+                    <a href="https://euoryan.com" 
+                        class="footer-credit" 
+                        target="_blank">Ryan</a>
+                    Todos os direitos reservados.
+                </p>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
