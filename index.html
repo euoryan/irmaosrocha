@@ -76,8 +76,11 @@
 
         /* Hero Section */
         #inicio {
-            min-height: 70vh;
-            padding-top: 5rem;
+            min-height: 60vh;
+            /* Reduzido de 70vh para 60vh */
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            /* Adicionado padding bottom menor */
             display: flex;
             align-items: center;
             background-color: #ffffff;
@@ -98,7 +101,8 @@
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
+            /* Reduzido de 2rem para 1.5rem */
         }
 
         .hero-button {
@@ -109,7 +113,10 @@
             border-radius: 0.5rem;
             font-weight: 600;
             transition: var(--transition-standard);
+            white-space: nowrap;
+            /* Evita quebra de linha no texto do botão */
         }
+
 
         .hero-button-primary {
             background-color: #1f2937;
@@ -233,8 +240,10 @@
             }
 
             #inicio {
-                min-height: 60vh;
+                min-height: 50vh;
+                /* Reduzido ainda mais em mobile */
                 padding-top: 4rem;
+                padding-bottom: 1.5rem;
             }
 
             .hero-container {
@@ -242,12 +251,21 @@
             }
 
             .hero-buttons {
-                flex-direction: column;
+                flex-direction: row;
+                /* Mantém os botões na horizontal */
+                flex-wrap: nowrap;
+                /* Evita quebra de linha */
+                gap: 0.5rem;
+                /* Reduz o espaço entre os botões em mobile */
             }
 
             .hero-button {
                 padding: 0.75rem 1rem;
                 font-size: 0.875rem;
+                flex: 1;
+                /* Faz os botões ocuparem espaço igual */
+                min-width: 0;
+                /* Permite que os botões encolham se necessário */
             }
 
             section {
