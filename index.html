@@ -11,7 +11,7 @@
         :root {
     --primary-color: #f97316;
     --primary-hover: #ea580c;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-standard: all 0.3s ease;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -34,15 +34,7 @@ html {
 body {
     overflow-x: hidden;
     line-height: 1.5;
-}
-
-/* Responsive Typography */
-@media (max-width: 1024px) {
-    html { font-size: 15px; }
-}
-
-@media (max-width: 768px) {
-    html { font-size: 14px; }
+    background-color: #ffffff;
 }
 
 /* Navigation */
@@ -50,13 +42,13 @@ nav {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.95);
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
 }
 
 .nav-link {
     position: relative;
     padding: 0.5rem 0;
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
 }
 
 .nav-link::after {
@@ -67,7 +59,7 @@ nav {
     bottom: 0;
     left: 50%;
     background-color: var(--primary-color);
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
     transform: translateX(-50%);
 }
 
@@ -75,52 +67,21 @@ nav {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    nav .max-w-6xl {
-        padding: 0 1.25rem;
-    }
-    
-    .nav-link {
-        font-size: 1.125rem;
-        padding: 0.75rem 0;
-    }
-}
-
 /* Hero Section */
+#inicio {
+    position: relative;
+    background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+}
+
 .hero-button {
-    background-color: var(--primary-color);
-    transition: var(--transition-smooth);
-    transform: translateY(0);
-    box-shadow: var(--shadow-md);
-}
-
-.hero-button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-@media (max-width: 768px) {
-    #inicio {
-        padding: 6rem 1.25rem 3rem;
-    }
-    
-    #inicio h2 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    
-    .hero-button {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-    }
+    transition: var(--transition-standard);
 }
 
 /* Services Section */
 .service-card {
     border-top: 4px solid var(--primary-color);
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
+    background: #ffffff;
     height: 100%;
 }
 
@@ -133,58 +94,45 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
 }
 
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+.service-content {
+    padding: 1.5rem;
 }
 
-.service-card:hover .service-image {
-    transform: scale(1.05);
+.service-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #1f2937;
+    color: white;
+    border-radius: 0.5rem;
+    transition: var(--transition-standard);
 }
 
-@media (max-width: 768px) {
-    .service-card {
-        margin: 0 1.25rem 1.5rem;
-    }
-    
-    .service-image-container {
-        height: 200px;
-    }
+.service-button:hover {
+    background-color: #374151;
 }
 
 /* Advantages Section */
 .vantagem-card {
     border-bottom: 4px solid var(--primary-color);
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
+    background: #ffffff;
 }
 
-.vantagem-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-@media (max-width: 768px) {
-    .vantagem-card {
-        margin: 0 1.25rem 1.5rem;
-    }
+.vantagem-icon {
+    color: var(--primary-color);
 }
 
 /* Contact Section */
 .contact-card {
-    transition: var(--transition-smooth);
-    overflow: hidden;
-}
-
-.contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transition: var(--transition-standard);
+    background: #ffffff;
 }
 
 .contact-link {
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
     display: inline-flex;
     align-items: center;
     color: var(--primary-color);
@@ -192,28 +140,23 @@ nav {
 
 .contact-link:hover {
     color: var(--primary-hover);
-    transform: translateX(4px);
 }
 
-/* Enhanced Contact Button Styling */
 .contact-whatsapp-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     padding: 1rem 1.5rem;
-    background-color: #25D366;
+    background-color: #1f2937;
     color: white;
     border-radius: 0.5rem;
     font-weight: 600;
-    transition: var(--transition-smooth);
-    box-shadow: var(--shadow-md);
+    transition: var(--transition-standard);
 }
 
 .contact-whatsapp-button:hover {
-    background-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background-color: #374151;
 }
 
 .contact-whatsapp-button i {
@@ -221,7 +164,72 @@ nav {
     margin-right: 0.75rem;
 }
 
+/* Footer */
+footer {
+    position: relative;
+    background-color: #1f2937;
+}
+
+.footer-link {
+    transition: var(--transition-standard);
+    display: inline-flex;
+    align-items: center;
+    color: #9ca3af;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    nav .max-w-6xl {
+        padding: 0 1.25rem;
+    }
+    
+    .nav-link {
+        font-size: 1.125rem;
+        padding: 0.75rem 0;
+    }
+
+    #inicio {
+        padding: 5rem 1.25rem 3rem;
+    }
+
+    #inicio h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-button {
+        width: 100%;
+    }
+    
+    #inicio .flex-col {
+        text-align: center;
+    }
+    
+    #inicio .flex-col > div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-card {
+        margin: 0 1.25rem 1.5rem;
+    }
+    
+    .service-image-container {
+        height: 200px;
+    }
+
+    .vantagem-card {
+        margin: 0 1.25rem 1.5rem;
+    }
+
     .contact-card {
         margin: 0 1.25rem 1.5rem;
     }
@@ -236,41 +244,10 @@ nav {
         margin-top: 0.25rem;
     }
     
-    .contact-card a.contact-link {
-        font-size: 1rem;
-    }
-    
     .contact-whatsapp-button {
         margin-top: 1.5rem;
     }
-}
 
-/* Footer */
-footer {
-    position: relative;
-    overflow: hidden;
-}
-
-.footer-link {
-    transition: var(--transition-smooth);
-    display: inline-flex;
-    align-items: center;
-}
-
-.footer-link:hover {
-    color: var(--primary-color);
-    transform: translateX(4px);
-}
-
-.footer-link i {
-    transition: var(--transition-smooth);
-}
-
-.footer-link:hover i {
-    transform: translateX(4px);
-}
-
-@media (max-width: 768px) {
     footer {
         padding: 3rem 1.25rem 2rem;
     }
@@ -291,10 +268,7 @@ footer {
     footer .mt-12 {
         margin-top: 2.5rem;
     }
-}
 
-/* Section Headers & General Spacing */
-@media (max-width: 768px) {
     section {
         padding: 3rem 0;
     }
@@ -304,22 +278,20 @@ footer {
         margin-bottom: 2rem;
         padding: 0 1.25rem;
     }
-    
-    .max-w-6xl {
-        padding: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 15px;
     }
-}
+    
+    #inicio {
+        padding: 6rem 2rem 4rem;
+    }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.service-card,
-.vantagem-card,
-.contact-card {
-    animation: fadeIn 0.6s ease-out forwards;
+    section {
+        padding: 4rem 2rem;
+    }
 }
 
 /* Utility Classes */
@@ -327,17 +299,9 @@ footer {
     text-wrap: balance;
 }
 
-.hover-lift {
-    transition: var(--transition-smooth);
-}
-
-.hover-lift:hover {
-    transform: translateY(-2px);
-}
-
 .smooth-shadow {
     box-shadow: var(--shadow-md);
-    transition: var(--transition-smooth);
+    transition: var(--transition-standard);
 }
 
 .smooth-shadow:hover {
@@ -364,20 +328,37 @@ footer {
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-24 pb-12 bg-gradient-to-br from-gray-900 to-gray-800">
+    <section id="inicio" class="pt-24 pb-12 bg-white">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center py-16">
-                <h2 class="text-5xl font-bold text-white mb-6">Serviços Gerais de <span class="text-orange-500">Qualidade</span></h2>
-                <p class="text-xl text-gray-300 mb-10">Soluções completas em manutenção predial e residencial</p>
-                <div class="inline-block">
-                    <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center px-10 py-4 rounded-lg font-semibold text-white">
-                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
-                        Solicitar Orçamento
-                    </a>
+            <div class="flex flex-col md:flex-row items-center justify-between py-16">
+                <div class="text-left md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Manutenção Profissional 
+                        <span class="block mt-2">para seu 
+                            <span class="text-orange-500">Imóvel</span>
+                        </span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">Soluções completas em manutenção predial e residencial com qualidade e segurança.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-300">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                            Solicitar Orçamento
+                        </a>
+                        <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-gray-900 border-2 border-gray-900 hover:bg-gray-100 transition-colors duration-300">
+                            Nossos Serviços
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-orange-500/10 rounded-xl transform rotate-6"></div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Serviços -->
     <section id="servicos" class="py-16">
