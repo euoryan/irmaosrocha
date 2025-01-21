@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,28 +17,28 @@
             --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Reset e Estilos Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         body {
             overflow-x: hidden;
             line-height: 1.5;
             background-color: #ffffff;
             min-height: 100vh;
         }
-        
+
         /* Navegação */
         nav {
             position: fixed;
@@ -49,14 +50,14 @@
             box-shadow: var(--shadow-sm);
             height: 4rem;
         }
-        
+
         .nav-link {
             position: relative;
             padding: 0.5rem 0;
             transition: var(--transition-standard);
             color: #374151;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -68,11 +69,66 @@
             transition: var(--transition-standard);
             transform: translateX(-50%);
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
+        /* Hero Section */
+        #inicio {
+            min-height: 70vh;
+            padding-top: 5rem;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        .hero-container {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 36rem;
+            text-align: left;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition-standard);
+        }
+
+        .hero-button-primary {
+            background-color: #1f2937;
+            color: white;
+        }
+
+        .hero-button-primary:hover {
+            background-color: #374151;
+        }
+
+        .hero-button-secondary {
+            border: 2px solid #1f2937;
+            color: #1f2937;
+        }
+
+        .hero-button-secondary:hover {
+            background-color: #f3f4f6;
+        }
+
         /* Seção de Serviços */
         .service-card {
             background: #ffffff;
@@ -82,26 +138,26 @@
             border: 1px solid #e5e7eb;
             transition: var(--transition-standard);
         }
-        
+
         .service-card:hover {
             box-shadow: var(--shadow-md);
         }
-        
+
         .service-image-container {
             height: 240px;
             overflow: hidden;
         }
-        
+
         .service-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .service-content {
             padding: 1.5rem;
         }
-        
+
         .service-button {
             display: inline-block;
             margin-top: 1rem;
@@ -113,11 +169,11 @@
             text-align: center;
             width: 100%;
         }
-        
+
         .service-button:hover {
             background-color: #374151;
         }
-        
+
         /* Seção de Vantagens */
         .vantagem-card {
             background: #ffffff;
@@ -127,15 +183,15 @@
             transition: var(--transition-standard);
             border: 1px solid #e5e7eb;
         }
-        
+
         .vantagem-card:hover {
             box-shadow: var(--shadow-md);
         }
-        
+
         .vantagem-icon {
             color: var(--primary-color);
         }
-        
+
         /* Seção de Contato */
         .contact-card {
             background: #ffffff;
@@ -144,76 +200,78 @@
             box-shadow: var(--shadow-sm);
             border: 1px solid #e5e7eb;
         }
-        
+
         .contact-link {
             transition: var(--transition-standard);
             color: #4b5563;
         }
-        
+
         .contact-link:hover {
             color: var(--primary-color);
         }
-        
+
         /* Footer */
         footer {
             background-color: #1f2937;
             color: #ffffff;
             padding: 4rem 0 2rem;
         }
-        
+
         .footer-link {
             color: #9ca3af;
             transition: var(--transition-standard);
         }
-        
+
         .footer-link:hover {
             color: #ffffff;
         }
-        
+
         /* Media Queries */
         @media (max-width: 640px) {
             html {
                 font-size: 14px;
             }
-        
+
             #inicio {
+                min-height: 60vh;
                 padding-top: 4rem;
-                min-height: calc(100vh - 4rem);
             }
-        
+
+            .hero-container {
+                padding: 0 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
             .hero-button {
-                padding: 1rem;
-                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
             }
-        
+
             section {
-                padding: 3rem 1rem;
-            }
-        
-            .service-card,
-            .vantagem-card,
-            .contact-card {
-                margin-bottom: 1rem;
+                padding: 2.5rem 1rem;
             }
         }
-        
+
         @media (min-width: 641px) and (max-width: 768px) {
             #inicio {
                 padding-top: 4rem;
-                min-height: calc(100vh - 4rem);
+                min-height: 70vh;
             }
-        
+
             section {
                 padding: 4rem 2rem;
             }
         }
-        
+
         @media (min-width: 769px) and (max-width: 1024px) {
             section {
                 padding: 5rem 3rem;
             }
         }
-        
+
         /* Utilitários */
         .container {
             width: 100%;
@@ -221,27 +279,30 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
+
         section {
             padding: 5rem 0;
         }
-        
+
         .max-w-6xl {
             max-width: 72rem;
         }
-        
+
         .text-balance {
             text-wrap: balance;
         }
-        </style>
+    </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Navegação -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-6xl mx-auto px-4 lg:px-8"> <!-- Ajustado padding -->
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-gray-800">Irmãos <span class="text-orange-500">Rocha</span></h1>
+                    <h1 class="text-2xl font-bold text-gray-800 ml-0"> <!-- Adicionado ml-0 -->
+                        Irmãos <span class="text-orange-500">Rocha</span>
+                    </h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#inicio" class="nav-link text-gray-700">Início</a>
@@ -254,33 +315,29 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center bg-white">
-        <div class="max-w-6xl mx-auto px-4 w-full py-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Manutenção Profissional 
-                    <span class="block mt-2">para seu 
-                        <span class="text-orange-500">Imóvel</span>
-                    </span>
+    <section id="inicio" class="bg-white">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Manutenção Profissional
+                    <span class="text-orange-500 block mt-2">para seu Imóvel</span>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-600 mb-6">
                     Soluções completas em manutenção predial e residencial com qualidade e segurança.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/5548991934033" 
-                       class="hero-button w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-4 rounded-lg font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-300">
-                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5548991934033" class="hero-button hero-button-primary">
+                        <i class="fab fa-whatsapp mr-2"></i>
                         Solicitar Orçamento
                     </a>
-                    <a href="#servicos" 
-                       class="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-4 rounded-lg font-semibold text-gray-900 border-2 border-gray-900 hover:bg-gray-100 transition-colors duration-300">
+                    <a href="#servicos" class="hero-button hero-button-secondary">
                         Nossos Serviços
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Serviços -->
     <section id="servicos" class="py-16">
         <div class="max-w-6xl mx-auto px-4">
@@ -290,13 +347,12 @@
                 <!-- Serviço 2 - Elétrica -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/eletrica.webp" 
-                             alt="Elétrica" 
-                             class="service-image">
+                        <img src="assets/images/projetos/eletrica.webp" alt="Elétrica" class="service-image">
                     </div>
                     <div class="service-content">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Elétrica</h3>
-                        <p class="text-gray-600">Instalações e manutenções elétricas com segurança e qualidade garantida.</p>
+                        <p class="text-gray-600">Instalações e manutenções elétricas com segurança e qualidade
+                            garantida.</p>
                         <a href="https://wa.me/5548991934033" class="service-button">
                             Contratar Serviço
                         </a>
@@ -306,13 +362,12 @@
                 <!-- Serviço 3 - Hidráulica -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/hidraulica.webp" 
-                             alt="Hidráulica" 
-                             class="service-image">
+                        <img src="assets/images/projetos/hidraulica.webp" alt="Hidráulica" class="service-image">
                     </div>
                     <div class="service-content">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Hidráulica</h3>
-                        <p class="text-gray-600">Soluções completas em instalações e reparos hidráulicos para sua casa ou empresa.</p>
+                        <p class="text-gray-600">Soluções completas em instalações e reparos hidráulicos para sua casa
+                            ou empresa.</p>
                         <a href="https://wa.me/5548991934033" class="service-button">
                             Contratar Serviço
                         </a>
@@ -322,13 +377,12 @@
                 <!-- Serviço 4 - Pintura -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/pintura.webp" 
-                             alt="Pintura" 
-                             class="service-image">
+                        <img src="assets/images/projetos/pintura.webp" alt="Pintura" class="service-image">
                     </div>
                     <div class="service-content">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Pintura</h3>
-                        <p class="text-gray-600">Serviços de pintura profissional para renovar e proteger seu ambiente.</p>
+                        <p class="text-gray-600">Serviços de pintura profissional para renovar e proteger seu ambiente.
+                        </p>
                         <a href="https://wa.me/5548991934033" class="service-button">
                             Contratar Serviço
                         </a>
@@ -338,13 +392,12 @@
                 <!-- Serviço 5 - Solda -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/solda.webp" 
-                             alt="Solda" 
-                             class="service-image">
+                        <img src="assets/images/projetos/solda.webp" alt="Solda" class="service-image">
                     </div>
                     <div class="service-content">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Solda</h3>
-                        <p class="text-gray-600">Serviços de solda com qualidade e precisão para diferentes necessidades.</p>
+                        <p class="text-gray-600">Serviços de solda com qualidade e precisão para diferentes
+                            necessidades.</p>
                         <a href="https://wa.me/5548991934033" class="service-button">
                             Contratar Serviço
                         </a>
@@ -354,9 +407,7 @@
                 <!-- Serviço 6 - Serviços de Pedreiro -->
                 <div class="service-card">
                     <div class="service-image-container">
-                        <img src="assets/images/projetos/pedreiro.webp" 
-                             alt="Pedreiro" 
-                             class="service-image">
+                        <img src="assets/images/projetos/pedreiro.webp" alt="Pedreiro" class="service-image">
                     </div>
                     <div class="service-content">
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Serviços de Pedreiro</h3>
@@ -381,7 +432,8 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-gray-800">Atendimento Rápido</h3>
-                    <p class="text-gray-600">Resposta ágil e eficiente para todas as suas necessidades de manutenção.</p>
+                    <p class="text-gray-600">Resposta ágil e eficiente para todas as suas necessidades de manutenção.
+                    </p>
                 </div>
 
                 <!-- Vantagem 2 -->
@@ -390,7 +442,8 @@
                         <i class="fas fa-certificate"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-gray-800">Garantia de Serviço</h3>
-                    <p class="text-gray-600">Todos os nossos serviços possuem garantia e são executados por profissionais qualificados.</p>
+                    <p class="text-gray-600">Todos os nossos serviços possuem garantia e são executados por
+                        profissionais qualificados.</p>
                 </div>
 
                 <!-- Vantagem 3 -->
@@ -417,23 +470,27 @@
                             <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
                             <div class="ml-4">
                                 <p class="font-semibold text-gray-800">Fábio</p>
-                                <a href="tel:+5548991934033" class="contact-link text-orange-500">(48) 99193-4033</a>
+                                <a href="https://wa.me/5548991934033" class="contact-link text-orange-500">+55 (48)
+                                    99193-4033</a>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
                             <div class="ml-4">
                                 <p class="font-semibold text-gray-800">Alex</p>
-                                <a href="tel:+5548991664602" class="contact-link text-orange-500">(48) 99166-4602</a>
+                                <a href="https://wa.me/5548991664602" class="contact-link text-orange-500">+55 (48)
+                                    99166-4602</a>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-envelope text-orange-500 text-2xl w-8"></i>
-                            <a href="mailto:irmaosrochamanutencao@gmail.com" class="contact-link ml-4 text-orange-500">irmaosrochamanutencao@gmail.com</a>
+                            <a href="mailto:irmaosrochamanutencao@gmail.com"
+                                class="contact-link ml-4 text-orange-500">irmaosrochamanutencao@gmail.com</a>
                         </div>
                         <div class="flex items-center">
                             <i class="fab fa-instagram text-orange-500 text-2xl w-8"></i>
-                            <a href="https://instagram.com/irmaosrocha" class="contact-link ml-4 text-orange-500">@irmaosrocha</a>
+                            <a href="https://instagram.com/irmaosrocha"
+                                class="contact-link ml-4 text-orange-500">@irmaosrocha</a>
                         </div>
                     </div>
                 </div>
@@ -455,7 +512,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center justify-center bg-green-500 text-white px-6 py-4 rounded-lg font-semibold w-full text-lg hover:bg-green-600">
+                    <a href="https://wa.me/5548991934033"
+                        class="hero-button inline-flex items-center justify-center bg-green-500 text-white px-6 py-4 rounded-lg font-semibold w-full text-lg hover:bg-green-600">
                         <i class="fab fa-whatsapp mr-3 text-2xl"></i>
                         Chamar no WhatsApp
                     </a>
@@ -469,7 +527,8 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-12">
                 <div>
-                    <h4 class="text-2xl font-semibold mb-6 text-white">Irmãos <span class="text-orange-500">Rocha</span></h4>
+                    <h4 class="text-2xl font-semibold mb-6 text-white">Irmãos <span class="text-orange-500">Rocha</span>
+                    </h4>
                     <p class="text-gray-400 text-lg">Serviços gerais de qualidade para sua casa ou empresa.</p>
                 </div>
                 <div>
@@ -488,13 +547,13 @@
                         <li>
                             <a href="tel:+5548991934033" class="flex items-center footer-link">
                                 <i class="fas fa-phone text-orange-500 mr-3"></i>
-                                Fábio: (48) 99193-4033
+                                Fábio: +55 (48) 99193-4033
                             </a>
                         </li>
                         <li>
                             <a href="tel:+5548991664602" class="flex items-center footer-link">
                                 <i class="fas fa-phone text-orange-500 mr-3"></i>
-                                Alex: (48) 99166-4602
+                                Alex: +55 (48) 99166-4602
                             </a>
                         </li>
                         <li>
@@ -518,4 +577,5 @@
         </div>
     </footer>
 </body>
+
 </html>
