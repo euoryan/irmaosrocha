@@ -18,6 +18,22 @@
             --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .avatar-circle {
+    width: 40px; 
+    height: 40px; 
+    background-color: #FFA500; 
+    border-radius: 50%; /* This ensures a perfect circle */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-weight: bold;
+    font-size: 16px; 
+    text-transform: uppercase;
+    flex-shrink: 0; /* Prevents the circle from shrinking */
+}
+
+
         /* Reset e Estilos Base */
         * {
             margin: 0;
@@ -319,6 +335,7 @@
         .footer-credit:hover {
             color: #ffffff; /* cor laranja do Tailwind (orange-500) */
         }
+        
     </style>
 </head>
 
@@ -329,7 +346,7 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <!-- Título com link para a página inicial -->
-                    <a href="https://euoryan.com/irmaosrocha" class="text-2xl font-bold text-gray-800 ml-0">
+                    <a href="index.html#inicio" class="text-2xl font-bold text-gray-800 ml-0">
                         Irmãos <span class="text-orange-500">Rocha</span>
                     </a>
                 </div>
@@ -511,10 +528,10 @@
                     <h3 class="text-2xl font-semibold mb-8 text-gray-800">Informações de Contato</h3>
                     <div class="space-y-6">
                         <div class="flex items-center">
-                            <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
+                            <div class="avatar-circle">FR</div>
                             <div class="ml-4">
-                                <p class="font-semibold text-gray-800">Fábio Rocha</p>
-                                <p class="text-gray-600 text-sm mb-1">Serviços: elétrica, pintura, hidráulica, solda e construções</p>
+                                <p class="font-semibold text-gray-800">Fábio</p>
+                                <p class="text-gray-600 text-sm mb-1">Elétrica, pintura, hidráulica, solda e construções</p>
                                 <a href="https://wa.me/5548991934033" class="contact-link text-orange-500 inline-flex items-center">
                                     +55 (48) 99193-4033
                                     <i class="fas fa-up-right-from-square ml-2 text-xs"></i>
@@ -522,10 +539,10 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
+                            <div class="avatar-circle">AR</div>
                             <div class="ml-4">
-                                <p class="font-semibold text-gray-800">Alex Rocha</p>
-                                <p class="text-gray-600 text-sm mb-1">Serviços: elétrica, pintura, hidráulica, solda e construções</p>
+                                <p class="font-semibold text-gray-800">Alex</p>
+                                <p class="text-gray-600 text-sm mb-1">Elétrica, pintura, hidráulica, solda e construções</p>
                                 <a href="https://wa.me/5548991664602" class="contact-link text-orange-500 inline-flex items-center">
                                     +55 (48) 99166-4602
                                     <i class="fas fa-up-right-from-square ml-2 text-xs"></i>
@@ -533,9 +550,9 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-user text-orange-500 text-2xl w-8"></i>
+                            <div class="avatar-circle">RB</div>
                             <div class="ml-4">
-                                <p class="font-semibold text-gray-800">Ryan B.</p>
+                                <p class="font-semibold text-gray-800">Ryan</p>
                                 <p class="text-gray-600 text-sm mb-1">Manutenção, upgrades e assistência técnica para notebooks e computadores</p>
                                 <a href="https://wa.me/5548984613946" class="contact-link text-orange-500 inline-flex items-center">
                                     +55 (48) 98491-3946
@@ -544,7 +561,9 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <i class="fab fa-instagram text-orange-500 text-2xl w-8"></i>
+                            <div class="avatar-circle text-2xl w-10 h-10">
+                                <i class="fab fa-instagram text-orange-500"></i>
+                            </div>
                             <a href="https://instagram.com/irmaosrochamanutencoes" class="contact-link ml-4 text-orange-500 inline-flex items-center">
                                 @irmaosrochamanutencoes
                                 <i class="fas fa-up-right-from-square ml-2 text-xs"></i>
@@ -558,19 +577,26 @@
                         <div class="flex items-center">
                             <i class="far fa-clock text-orange-500 text-2xl w-8"></i>
                             <div class="ml-4">
-                                <p class="font-semibold text-gray-800">Segunda a Sexta</p>
-                                <p class="text-gray-600">Somente com hora agendada.</p>
+                                <p class="font-semibold text-gray-800">Segunda a Sexta-feira</p>
+                                <p class="text-gray-600">Somente com horário agendado.</p>
                             </div>
                         </div>
                         <div class="flex items-center">
                             <i class="far fa-clock text-orange-500 text-2xl w-8"></i>
                             <div class="ml-4">
-                                <p class="font-semibold text-gray-800">Sábado</p>
-                                <p class="text-gray-600">Somente com hora agendada.</p>
+                                <p class="font-semibold text-gray-800">Sábado e Domingo</p>
+                                <p class="text-gray-600">Atendimento disponível com agendamento prévio.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-clock text-orange-500 text-2xl w-8"></i>
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-800">Atendimento Emergencial</p>
+                                <p class="text-gray-600">Disponível 24h, sujeito à disponibilidade e demanda.</p>
                             </div>
                         </div>
                     </div>
-                    <a href="https://wa.me/5548991934033" class="hero-button inline-flex items-center justify-center bg-green-500 text-white px-6 py-4 rounded-lg font-semibold w-full text-lg hover:bg-green-600">
+                    <a href="contatos.html" class="hero-button inline-flex items-center justify-center bg-green-500 text-white px-6 py-4 rounded-lg font-semibold w-full text-lg hover:bg-green-600">
                         <i class="fab fa-whatsapp mr-3 text-2xl"></i>
                         Agendar serviço
                     </a>
@@ -615,7 +641,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://instagram.com/irmaosrochamanutencoes" class="flex items-center footer-link text-sm">
+                            <a href="mailto:irmaosrochamanutencao@gmail.com" class="flex items-center footer-link text-sm">
                                 <i class="fas fa-envelope text-orange-500 mr-2"></i>
                                 irmaosrochamanutencao@gmail.com
                             </a>
