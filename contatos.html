@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon/irmaosrocha.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --transition-standard: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-card {
+            transition: var(--transition-standard);
+            border: 1px solid #e5e7eb;
+        }
+        .contact-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+        .back-btn {
+            border: 2px solid #1f2937;
+            color: #1f2937;
+            transition: var(--transition-standard);
+        }
+        .back-btn:hover {
+            background-color: #1f2937;
+            color: white;
+        }
+        .avatar {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 0.5rem;
+            transition: var(--transition-standard);
+        }
+        .whatsapp-btn {
+            background-color: #1f2937;
+            color: white;
+            transition: var(--transition-standard);
+        }
+        .whatsapp-btn:hover {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <a href="index.html" class="back-btn inline-flex items-center mb-8 px-4 py-2 rounded-lg hover:bg-gray-900 hover:text-white">
+            <i class="fas fa-arrow-left mr-2"></i>Voltar para página inicial
+        </a>
+
+        <div class="grid gap-6">
+            <!-- Fabio Card -->
+            <div class="contact-card bg-white rounded-lg overflow-hidden flex items-center shadow-sm p-6">
+                <div class="w-24 h-24 mr-6 avatar" style="background-image: url('assets/images/contatos/contact.webp')"></div>
+                <div class="flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">
+                        Fábio <span class="text-orange-500">Rocha</span>
+                    </h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Serviços: elétrica, pintura, hidráulica, solda e construções
+                    </p>
+                    <a href="https://wa.me/5548991934033" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                        <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                    </a>
+                </div>
+            </div>
+
+            <!-- Alex Card -->
+            <div class="contact-card bg-white rounded-lg overflow-hidden flex items-center shadow-sm p-6">
+                <div class="w-24 h-24 mr-6 avatar" style="background-image: url('assets/images/contatos/contact.webp')"></div>
+                <div class="flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">
+                        Alex <span class="text-orange-500">Rocha</span>
+                    </h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Serviços: elétrica, pintura, hidráulica, solda e construções
+                    </p>
+                    <a href="https://wa.me/5548991664602" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                        <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ryan Card -->
+            <div class="contact-card bg-white rounded-lg overflow-hidden flex items-center shadow-sm p-6">
+                <div class="w-24 h-24 mr-6 avatar" style="background-image: url('assets/images/contatos/contact.webp')"></div>
+                <div class="flex-grow">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">
+                        Ryan <span class="text-orange-500">Desenvolvedor</span>
+                    </h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Manutenção, upgrades e assistência técnica para notebooks e computadores
+                    </p>
+                    <a href="https://wa.me/5548988634032" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                        <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-100 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 px-8 md:px-0">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        Irmãos <span class="text-orange-500">Rocha</span>
+                    </h4>
+                    <p class="text-gray-400 text-base">
+                        Soluções, Reparos e Manutenções.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        Nossos Serviços
+                    </h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="#servicos" class="footer-link text-sm">Elétrica</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Hidráulica</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Pintura</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Solda</a></li>
+                        <li><a href="#servicos" class="footer-link text-sm">Serviços de Pedreiro</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white">
+                        Informações
+                    </h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>
+                            <a href="tel:+5548991934033" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-phone text-orange-500 mr-2"></i>
+                                Fábio: +55 (48) 99193-4033
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+5548991664602" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-phone text-orange-500 mr-2"></i>
+                                Alex: +55 (48) 99166-4602
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/irmaosrochamanutencoes" class="flex items-center footer-link text-sm">
+                                <i class="fab fa-instagram text-orange-500 mr-2"></i>
+                                @irmaosrochamanutencoes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contato@euoryan.com" class="flex items-center footer-link text-sm">
+                                <i class="fas fa-envelope text-orange-500 mr-2"></i>
+                                contato@euoryan.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="mt-8 pt-4 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 por 
+                    <a href="https://euoryan.com" 
+                        class="footer-credit" 
+                        target="_blank">Ryan</a>
+                    Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
