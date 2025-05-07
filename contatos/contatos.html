@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon/irmaosrocha.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f97316;
+            --primary-hover: #ea580c;
+            --transition-standard: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-sm);
+            height: 4rem;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition-standard);
+            color: #374151;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: var(--transition-standard);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition-standard);
+        }
+
+        .contact-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .avatar-circle {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background-color: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-btn {
+            background-color: #1f2937;
+            color: white;
+            transition: var(--transition-standard);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 640px) {
+            .contact-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .avatar-circle {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <!-- Título com link para a página inicial -->
+                    <a href="index.html#inicio" class="text-2xl font-bold text-gray-800 ml-0">
+                        Irmãos <span class="text-orange-500">Rocha</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../" class="nav-link text-gray-700">Início</a>
+                    <a href="../#servicos" class="nav-link text-gray-700">Serviços</a>
+                    <a href="../#vantagens" class="nav-link text-gray-700">Vantagens</a>
+                    <a href="../#contato" class="nav-link text-gray-700">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <section class="py-16 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nossos Contatos</h2>
+            <div class="grid md:grid-cols-1 gap-6">
+                <!-- Fabio Card -->
+                <div class="contact-card flex items-center">
+                    <div class="avatar-circle">FR</div>
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">
+                            Fábio <span class="text-orange-500"></span>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Elétrica, pintura, hidráulica, solda e construções
+                        </p>
+                        <a href="https://wa.me/5548991934033" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Alex Card -->
+                <div class="contact-card flex items-center">
+                    <div class="avatar-circle">AR</div>
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">
+                            Alex <span class="text-orange-500"></span>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Elétrica, pintura, hidráulica, solda e construções
+                        </p>
+                        <a href="https://wa.me/5548991664602" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ryan Card -->
+                <div class="contact-card flex items-center">
+                    <div class="avatar-circle">RB</div>
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">
+                            Ryan <span class="text-orange-500"></span>
+                        </h2>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Manutenção, upgrades e assistência técnica para notebooks e computadores
+                        </p>
+                        <a href="https://wa.me/5548984613946" class="whatsapp-btn inline-block px-4 py-2 rounded-lg text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i>Iniciar Conversa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL do footer no GitHub Raw
+            const footerUrl = 'https://raw.githubusercontent.com/euoryan/euoryan.github.io/refs/heads/main/assets/pages/footer.html';
+        
+            // Função para carregar o footer
+            function loadFooter() {
+                fetch(footerUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao carregar o footer');
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        // Criar um container para o footer
+                        const footerContainer = document.createElement('div');
+                        footerContainer.innerHTML = html.trim();
+        
+                        // Pegar o footer do HTML carregado
+                        const newFooter = footerContainer.querySelector('footer');
+        
+                        if (newFooter) {
+                            // Substituir o footer existente
+                            const existingFooter = document.querySelector('footer');
+                            if (existingFooter) {
+                                existingFooter.parentNode.replaceChild(newFooter, existingFooter);
+                            } else {
+                                // Se não existir footer, adicionar ao final do body
+                                document.body.appendChild(newFooter);
+                            }
+                        } else {
+                            throw new Error('Nenhum footer encontrado');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar o footer:', error);
+                        
+                        // Criar footer de fallback
+                        const fallbackFooter = document.createElement('footer');
+                        fallbackFooter.className = 'footer';
+                        fallbackFooter.innerHTML = `
+                            <div class="footer-container">
+                                <div class="footer-rights">
+                                    <span>© 2024 por Ryan</span>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // Substituir ou adicionar footer de fallback
+                        const existingFooter = document.querySelector('footer');
+                        if (existingFooter) {
+                            existingFooter.parentNode.replaceChild(fallbackFooter, existingFooter);
+                        } else {
+                            document.body.appendChild(fallbackFooter);
+                        }
+                    });
+            }
+        
+            // Chamar a função para carregar o footer
+            loadFooter();
+        });
+    </script>
+</body>
+</html>
